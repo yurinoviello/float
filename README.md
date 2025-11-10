@@ -156,11 +156,12 @@ This repository is a research demonstration implementation and is provided as a 
 
 ## Citation
 ```bibtex
-@article{ki2024float,
-  title={FLOAT: Generative Motion Latent Flow Matching for Audio-driven Talking Portrait},
+@inproceedings{ki2025float,
+  title={Float: Generative motion latent flow matching for audio-driven talking portrait},
   author={Ki, Taekyung and Min, Dongchan and Chae, Gyeongsu},
-  journal={arXiv preprint arXiv:2412.01064},
-  year={2024}
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={14699--14710},
+  year={2025}
 }
 ```
 
@@ -168,7 +169,8 @@ This repository is a research demonstration implementation and is provided as a 
 - [StyleLipSync: Style-based Personalized Lip-sync Video Generation](https://arxiv.org/abs/2305.00521)<br>
 - [StyleTalker: One-shot Style-based Audo-driven Talking Head Video Generation](https://arxiv.org/abs/2208.10922)<br>
 - [Export3D: Learning to Generate Conditional Tri-plane for 3D-aware Expression Controllable Portrait Animation](https://arxiv.org/abs/2404.00636)<br>
+- [Latent Image Animator: Learning to Animate Images via Latent Space Navigation](https://arxiv.org/abs/2203.09043)<br>
 
 ## Acknowledgements
 
-The source images and audio are collected from the internet and other baselines, such as SadTalker, EMO, VASA-1, Hallo, LivePortrait, Loopy, and others. We appreciate their valuable contributions to this field. We employ Wav2Vec2.0-based speech emotion recognizer by [Rob Field](https://huggingface.co/r-f/wav2vec-english-speech-emotion-recognition). We appreciate this good work.
+The source images and audio are collected from the internet and other baselines, such as LIA, SadTalker, EMO, VASA-1, Hallo, LivePortrait, Loopy, and others. We appreciate their valuable contributions to this field. We employ Wav2Vec2.0-based speech emotion recognizer by [Rob Field](https://huggingface.co/r-f/wav2vec-english-speech-emotion-recognition). We appreciate this good work.
