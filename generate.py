@@ -182,7 +182,7 @@ class InferenceOptions(BaseOptions):
 if __name__ == '__main__':
 	opt = InferenceOptions().parse()
 	if torch.cuda.is_available():
-		print("cuda_avaliable")
+		print("cuda_avaliable-0")
 		opt.rank, opt.ngpus = "cuda:0", 1
 	else:
 		opt.rank, opt.ngpus = "cpu", 0
