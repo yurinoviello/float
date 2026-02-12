@@ -401,7 +401,7 @@ class ToFlow(nn.Module):
         xs = np.meshgrid(xs, xs)
         xs = np.stack(xs, 2)
 
-        xs = torch.tensor(xs, requires_grad=False).float().unsqueeze(0).repeat(input.size(0), 1, 1, 1).cuda()
+        xs = torch.tensor(xs, requires_grad=False).float().unsqueeze(0).repeat(input.size(0), 1, 1, 1).to(input.device)
 
         if skip is not None:
             skip = self.upsample(skip)

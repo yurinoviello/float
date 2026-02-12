@@ -22,7 +22,7 @@ class DataProcessor:
 		self.sampling_rate = opt.sampling_rate
 		self.input_size = opt.input_size
 
-		self.fa = face_alignment.FaceAlignment(face_alignment.LandmarksType.TWO_D, flip_input=False)
+		self.fa = face_alignment.FaceAlignment(face_alignment.LandmarksType.TWO_D, flip_input=False, device=opt.rank)
 
 		# wav2vec2 audio preprocessor
 		self.wav2vec_preprocessor = Wav2Vec2FeatureExtractor.from_pretrained(opt.wav2vec_model_path, local_files_only=True)
@@ -181,7 +181,11 @@ class InferenceOptions(BaseOptions):
 
 if __name__ == '__main__':
 	opt = InferenceOptions().parse()
-	opt.rank, opt.ngpus  = 0,1
+	if torch.cuda.is_available():
+		print("cuda_avaliable")
+		opt.rank, opt.ngpus = 0, 1
+	else:
+		opt.rank, opt.ngpus = "cpu", 0
 	agent = InferenceAgent(opt)
 	os.makedirs(opt.res_dir, exist_ok = True)
 
